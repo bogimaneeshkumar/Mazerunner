@@ -1,0 +1,6 @@
+maze:
+
+  gazebo_ros_control/pid_gains: 
+
+    Rev1: {p: 10.0, i: 0.0, d: 1.0} 
+    Rev2: {p: 10.0, i: 0.0, d: 1.0} 

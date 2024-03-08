@@ -1,0 +1,15 @@
+mobot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Left_wheel_velocity:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev1
+ 
+  Right_wheel_velocity:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev2
+   
