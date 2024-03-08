@@ -1,0 +1,3 @@
+<launch>
+    <node name="gmapping" pkg="mobot_description" type="gmapping.py" output="screen"/>
+</launch>

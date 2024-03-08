@@ -1,0 +1,26 @@
+<launch>
+
+  <arg name="x" default="-21.052563"/>
+  <arg name="y" default="-25.656921"/>
+  <arg name="z" default="0.661100"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="1.570037"/>
+
+  <param command="$(find xacro)/xacro $(find mobot_description)/urdf/mobot.xacro" name="robot_description"/>
+
+  <node args="-param robot_description -urdf -model mobot -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name"  value="$(find mobot_description)/worlds/Final_Maze.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find mobot_description)/launch/controller.launch"/>
+  <node name="odom_pub" pkg="mobot_description" type="odom.py" output="screen" />
+</launch>
