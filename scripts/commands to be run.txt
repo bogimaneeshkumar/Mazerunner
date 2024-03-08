@@ -1,0 +1,8 @@
+maze=[maze1, maze2, maze3, FinalWorld]
+
+1.) roslaunch mobot_description maze[i].launch
+2.) roslaunch mobot_description display.launch
+3.) roslaunch mobot_description solution_scripts.launch
+4.) roscd mobot_description/Mapping_Output
+    rosrun map_server map_saver -f map
+# 5.) rosrun map_server map_server map.yaml
