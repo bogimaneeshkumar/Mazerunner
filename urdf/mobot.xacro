@@ -1,0 +1,363 @@
+<?xml version="1.0" ?>
+<robot name="mobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mobot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find mobot_description)/urdf/mobot.trans" />
+<xacro:include filename="$(find mobot_description)/urdf/mobot.gazebo" />
+
+<link name="dummy">
+</link>
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.026455219422411323 0.40968939827626377 0.04163234966670218"/>
+    <mass value="3150.9106588680847"/>
+    <inertia ixx="635.995618" ixy="-0.81772" ixz="-67.456188" iyy="1022.549178" iyz="-0.044342" izz="982.507872"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wh_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.1312147969753124e-05 -0.04374636663590059 0.00010103681154749466"/>
+    <mass value="22.585878116572662"/>
+    <inertia ixx="0.392865" ixy="7e-06" ixz="8.3e-05" iyy="0.740577" iyz="-0.0" izz="0.392894"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.336826 -0.903121 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/wh_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.336826 -0.903121 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/wh_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wh_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.1300030676417734e-05 0.043746268411519205 0.00010103050810311709"/>
+    <mass value="22.58582872362095"/>
+    <inertia ixx="0.392865" ixy="-7e-06" ixz="8.3e-05" iyy="0.740575" iyz="0.0" izz="0.392893"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.336826 0.084379 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/wh_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.336826 0.084379 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/wh_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ty_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.140859787837847e-07 0.06344168470022572 -2.1716540271610185e-07"/>
+    <mass value="1.1469070073401872"/>
+    <inertia ixx="0.03685" ixy="0.0" ixz="0.0" iyy="0.070789" iyz="0.0" izz="0.03685"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.336826 0.103129 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/ty_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.336826 0.103129 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/ty_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ty_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-5.315133068672928e-07 -0.06344178181047777 -1.7160374848890214e-07"/>
+    <mass value="1.1469058380153243"/>
+    <inertia ixx="0.03685" ixy="-0.0" ixz="0.0" iyy="0.070789" iyz="0.0" izz="0.03685"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.336826 -0.921871 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/ty_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.336826 -0.921871 0.27965"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/ty_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="6.103319483141689e-08 -4.667545749903468e-08 -0.07589255509540493"/>
+    <mass value="56.19482952954398"/>
+    <inertia ixx="0.316051" ixy="0.0" ixz="0.0" iyy="0.316051" iyz="0.0" izz="0.388848"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.68229 -0.409371 0.373403"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/castor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.68229 -0.409371 0.373403"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/castor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.004649646644218297 -4.128141434245336e-08 0.07900227655614012"/>
+    <mass value="69.79790090631205"/>
+    <inertia ixx="0.709975" ixy="-0.0" ixz="0.018831" iyy="0.464713" iyz="-0.0" izz="0.691542"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.439712 -0.409371 -0.717709"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.439712 -0.409371 -0.717709"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/Lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="fw_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.06263561471993406 0.000180168104896683 -0.2841628642191586"/>
+    <mass value="28.347081991217703"/>
+    <inertia ixx="1.775049" ixy="-0.009746" ixz="-0.0" iyy="0.795658" iyz="-0.0" izz="1.04472"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.908977 -0.40367 -0.371549"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/fw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.908977 -0.40367 -0.371549"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/fw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="bw_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.006250413681586298 -4.667545805414619e-08 -0.2119126601641136"/>
+    <mass value="29.960334499031035"/>
+    <inertia ixx="1.766091" ixy="-0.0" ixz="0.0" iyy="0.428193" iyz="0.0" izz="1.338678"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.598983 -0.409371 -0.578504"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/bw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.598983 -0.409371 -0.578504"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/bw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sw2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.024512866232685143 0.006249953324542382 -0.13941821214026714"/>
+    <mass value="25.796768244619983"/>
+    <inertia ixx="0.174666" ixy="-0.0" ixz="0.081495" iyy="2.087163" iyz="0.0" izz="1.91317"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.052952 0.103129 -0.326635"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sw2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.052952 0.103129 -0.326635"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sw2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sw1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.024512866232685133 -0.006250046675457477 -0.13941821214026712"/>
+    <mass value="25.796768244620132"/>
+    <inertia ixx="0.174666" ixy="0.0" ixz="0.081495" iyy="2.087163" iyz="0.0" izz="1.91317"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.052952 -0.921871 -0.326635"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sw1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.052952 -0.921871 -0.326635"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sw1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sd1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.015202593766192568 -0.006250046675457477 -0.09922891411246615"/>
+    <mass value="9.970459309140876"/>
+    <inertia ixx="0.034204" ixy="0.0" ixz="0.00522" iyy="0.244584" iyz="-0.0" izz="0.210639"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.226839 -0.921871 0.041915"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sd1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.226839 -0.921871 0.041915"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sd1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sd2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.01520259376619254 0.006249953324542382 -0.09922891411246618"/>
+    <mass value="9.97045930914082"/>
+    <inertia ixx="0.034204" ixy="-0.0" ixz="0.00522" iyy="0.244584" iyz="0.0" izz="0.210639"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.226839 0.103129 0.041915"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sd2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.226839 0.103129 0.041915"/>
+    <geometry>
+      <mesh filename="package://mobot_description/meshes/sd2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.336826 0.903121 -0.27965"/>
+  <parent link="base_link"/>
+  <child link="wh_2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.336826 -0.084379 -0.27965"/>
+  <parent link="base_link"/>
+  <child link="wh_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.01875 0.0"/>
+  <parent link="wh_1_1"/>
+  <child link="ty_1_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.01875 0.0"/>
+  <parent link="wh_2_1"/>
+  <child link="ty_2_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin rpy="0 0 0" xyz="0.68229 0.409371 -0.373403"/>
+  <parent link="base_link"/>
+  <child link="castor_1"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin rpy="0 0 0" xyz="0.439712 0.409371 0.717709"/>
+  <parent link="base_link"/>
+  <child link="Lidar_1"/>
+</joint>
+
+<joint name="Rigid7" type="fixed">
+  <origin rpy="0 0 0" xyz="0.908977 0.40367 0.371549"/>
+  <parent link="base_link"/>
+  <child link="fw_1"/>
+</joint>
+
+<joint name="Rigid8" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.598983 0.409371 0.578504"/>
+  <parent link="base_link"/>
+  <child link="bw_1"/>
+</joint>
+
+<joint name="Rigid9" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.052952 -0.103129 0.326635"/>
+  <parent link="base_link"/>
+  <child link="sw2_1"/>
+</joint>
+
+<joint name="Rigid10" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.052952 0.921871 0.326635"/>
+  <parent link="base_link"/>
+  <child link="sw1_1"/>
+</joint>
+
+<joint name="Rigid11" type="fixed">
+  <origin rpy="0 0 0" xyz="0.226839 0.921871 -0.041915"/>
+  <parent link="base_link"/>
+  <child link="sd1_1"/>
+</joint>
+
+<joint name="Rigid12" type="fixed">
+  <origin rpy="0 0 0" xyz="0.226839 -0.103129 -0.041915"/>
+  <parent link="base_link"/>
+  <child link="sd2_1"/>
+</joint>
+
+<joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_link"/>
+</joint>
+
+</robot>

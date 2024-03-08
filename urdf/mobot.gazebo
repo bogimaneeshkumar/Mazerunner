@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<robot name="mobot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body" value="Gazebo/Red" />
+<xacro:property name="wheel" value="Gazebo/Chrome" />
+<xacro:property name="tyre" value="Gazebo/Black" />
+<xacro:property name="fw" value="Gazebo/GreenTransparent " />
+<xacro:property name="bw" value="Gazebo/GreenTransparent " />
+<xacro:property name="sw" value="Gazebo/GreenTransparent " />
+<xacro:property name="sw2" value="Gazebo/GreenTransparent " />
+<xacro:property name="sd" value="Gazebo/Black" />
+<xacro:property name="sd2" value="Gazebo/RedTransparent" />
+<xacro:property name="castor" value="Gazebo/Silver" />
+<xacro:property name="lidar" value="Gazebo/Black" />
+
+<gazebo reference="base_link">
+  <material>${body}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="wh_2_1">
+  <material>${wheel}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="wh_1_1">
+  <material>${wheel}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ty_1_1">
+  <material>${tyre}</material>
+  <mu1>1</mu1>
+  <mu2>1</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ty_2_1">
+  <material>${tyre}</material>
+  <mu1>1</mu1>
+  <mu2>1</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="castor_1">
+  <material>${castor}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Lidar_1">
+  <material>${lidar}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="fw_1">
+  <material>${fw}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sw1_1">
+  <material>${sw}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sd1_1">
+  <material>${sd}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sw2_1">
+  <material>${sw}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="sd2_1">
+  <material>${sd}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="bw_1">
+  <material>${bw}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="control">
+  <robotNamespace>/mobot</robotNamespace>  
+  <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  </plugin> 
+</gazebo>
+
+<!-- laser plugin -->
+<gazebo reference="fw_1">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>fw_1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
