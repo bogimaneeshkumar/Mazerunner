@@ -1,7 +1,5 @@
 # IIT_Palakkad_Petrichor22_MazeRunner
 
-## Welcome the our Git Repository of Maze_Runner !!!
-
 
 ## Steps to use our Git repository
 1. Create a folder in your device named catkin_ws.
